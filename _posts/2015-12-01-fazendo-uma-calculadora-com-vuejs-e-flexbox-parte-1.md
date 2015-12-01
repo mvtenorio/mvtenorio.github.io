@@ -14,7 +14,7 @@ Na primeira parte, vou falar sobre CSS. Não sou nenhum especialista em design. 
 
 O Flexbox é, de acordo com a [especificação do W3C](http://www.w3.org/TR/css3-flexbox/):
 
-> um box model otimizado para design de interfaces de usuário. No modelo de layout flex, os filhos de um flex container podem ser dispostos em qualquer direção, e tem o tamanho flexível para, ou se expandir para preencher espaço não usado, ou encolher para evitar transbordar o pai.
+> um box model otimizado para design de interfaces de usuário. No modelo de layout flex, os filhos de um flex container podem ser dispostos em qualquer direção, e tem o tamanho flexível para, ou se expandir para preencher o espaço não utilizado, ou encolher para evitar transbordar o elemento pai.
 
 Basicamente, seus conceitos básicos são:
 
@@ -40,7 +40,7 @@ Por exemplo, na estrutura seguinte:
 </style>
 ```
 
-Ao aplicarmos a propriedade *display* em *.container* com o valor *flex*, os elementos *input button* e *p* se tornam itens, mas o *input text* não, pois não é filho imediato da div *.container*.
+Ao aplicarmos a propriedade *display* em *.container* com o valor *flex*, este se torna um container e os elementos *input button* e *p* se tornam itens, mas o *input text* não, pois não é filho imediato da div *.container*.
 
  Você pode saber mais sobre Flexbox [aqui](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) (inglês). Além disso, recomendo essa [série de vídeos](http://flexbox.io/) (também em inglês) sobre o assunto.
 
@@ -95,7 +95,7 @@ Vamos ao código, então. O objetivo é criar uma interface parecida com a calcu
 </html>
 ```
 
-Depois, vamos criar o arquivo CSS referenciado no *index.html* e aplicar um pouco de estilo para que a calculadora se pareça um pouco mais com o produto final.
+Depois, criamos o arquivo CSS referenciado no *index.html* e aplicamos um pouco de estilo para que a calculadora se pareça um pouco mais com o produto final.
 
 ```css
 /* css/style.css */
@@ -127,7 +127,7 @@ Depois, vamos criar o arquivo CSS referenciado no *index.html* e aplicar um pouc
 }
 ```
 
-Após criar os dois arquivos, abra o arquivo *index.html* no seu navegador e veja o resultado. Você pode notar que o input *.expression* utrapassou os limites da div *.calculator* devido ao valor colocado na propriedade *font-size*. Isso será corrigido automaticamente ao usar o flexbox.
+Após criar os dois arquivos, abra o arquivo *index.html* no seu navegador e veja o resultado. Você pode notar que o input *.expression* utrapassa os limites da div *.calculator* devido ao valor colocado na propriedade *font-size*. Isso será corrigido automaticamente ao usar o Flexbox.
 
 Precisamos agora identificar qual elemento será o container principal. O elemento que envolve todos os outros é a div *.calculator*. Vamos então alterar sua propriedade *display*:
 
@@ -138,11 +138,11 @@ Precisamos agora identificar qual elemento será o container principal. O elemen
 }
 ```
 
-Se você testar agora no navegador, verá que o input *.expression* e a div *.keyboard* ficaram lado a lado. Esses são os itens do container e o motivo deles se posicionarem dessa forma é a propriedade *flex-direction*, que tem por padrão o valor *row*. Isso significa que os itens se posicionam um ao lado do outro, seguindo uma linha.
+Se você testar agora no navegador, verá que o input *.expression* e a div *.keyboard* ficam lado a lado. Esses são os itens do container e o motivo deles se posicionarem dessa forma é a propriedade *flex-direction*, que tem por padrão o valor *row*. Isso significa que os itens se posicionam um ao lado do outro, seguindo uma linha.
 
-A príncipio essa propriedade me confundiu pois achei que o valor *row* deveria colocar cada item em sua própria linha, ou seja, um embaixo do outro. Porém, não é assim que o flexbox funciona. Essa propriedade determina a direção que os items devem tomar: a direção de uma linha ou a direção de uma coluna.
+A princípio, essa propriedade me confundiu pois achei que o valor *row* deveria colocar cada item em sua própria linha, ou seja, um embaixo do outro. Porém, não é assim que o Flexbox funciona. Essa propriedade determina a direção que os items devem tomar: a direção de uma linha ou a direção de uma coluna.
 
-Vamos então alterar esse valor para *column*:
+Temos que alterar o *flex-direction* para *column*:
 
 ```css
 .calculator {
@@ -152,18 +152,18 @@ Vamos então alterar esse valor para *column*:
 }
 ```
 
-Agora os items se posicionaram um embaixo do outro, na direção de uma coluna. Note que o input *.expression* agora se adapta ao tamanho do container.
+Com essa alteração, os items se posicionam um embaixo do outro, na direção de uma coluna. Note que o input *.expression* se adapta ao tamanho do container.
 
-Agora vamos transformar a div *.keyboard* também em um container, tornando as divs *.left* e *.right* em itens e as posicionando lado a lado. Você sempre pode colocar um container dentro de outro (nesse caso, a div *.keyboard* é um container e um item ao mesmo tempo).
+Para posicionar os elementos do teclado da forma que queremos, vamos transformar a div *.keyboard* também em um container, tornando as divs *.left* e *.right* em itens e as posicionando lado a lado. Você sempre pode colocar um container dentro de outro (nesse caso, a div *.keyboard* é um container e um item ao mesmo tempo).
 
 ```css
 .keyboard {
   display: flex;
+  /* aqui omitimos a propriedade flex-direction pois não queremos alterar o valor padrão */
 }
 ```
-\*Não precisamos colocar a propriedade *flex-direction* pois não queremos alterar o valor padrão.
 
-Agora vamos descer mais um nível e fazer as divs *.left* e *.right* se tornarem containers:
+Descendo mais um nível, fazemos as divs *.left* e *.right* se tornarem containers:
 
 ```css
 .keyboard .left {
@@ -175,7 +175,7 @@ Agora vamos descer mais um nível e fazer as divs *.left* e *.right* se tornarem
 }
 ```
 
-Em ambas as divs, os elementos se posicionaram em linha, como esperado. No caso da div *.left* precisamos que os itens se dividam em mais linhas para que caibam dentro do container. Fazemos isso com a propriedade *flex-wrap*:
+Em ambas as divs, os elementos se posicionam em linha, como esperado. No caso da div *.left* precisamos que os itens se dividam em mais linhas para que caibam dentro do container. Fazemos isso com a propriedade *flex-wrap*:
 
 ```css
 .keyboard .left {
@@ -212,7 +212,7 @@ Podemos então, aplicá-la da seguinte maneira:
   flex: 1 1 33.333%;
 }
 ```
-Note que essa propriedade é aplicada aos itens e não ao container. No nosso exemplo, todos os itens tem o mesmo valor mas você pode aplicar um valor diferente para cada item.
+Essa propriedade é aplicada aos itens e não ao container. Nesse exemplo, todos os itens tem o mesmo valor mas você pode aplicar um valor diferente para um item específico.
 
 ****
 Apenas para entender como a propriedade *flex-grow* funciona:
@@ -225,7 +225,7 @@ Após isso, volte a propriedade *flex* para o valor correto.
 
 ****
 
-Agora a calculadora já está quase pronta, mas a ordem dos botões está diferente do que queremos. Você pode, é claro, simplesmente alterar a ordem dos elementos no html, mas o flexbox também possui a capacidade de alterar a ordem dos itens com a propriedade *order*.
+Agora a calculadora já está quase pronta, mas a ordem dos botões está diferente da que queremos. Você pode, é claro, simplesmente alterar a ordem dos elementos no html, mas o Flexbox também possui a capacidade de alterar a ordem dos itens com a propriedade *order*.
 
 Ela funciona como um peso. Por padrão, todos os itens tem peso 1 e os itens que tiverem peso maior ficam por último. Para colocar os itens na ordem correta, faça o seguinte:
 
@@ -248,6 +248,6 @@ O resultado final deve ser esse:
 
 ![Calculadora final]({{ site.baseurl }}/images/001/calculadora-final.png "Calculadora final")
 
-Concluindo, o Flexbox deixa bem mais fácil a tarefa de criar uma interface usando apenas CSS sem utilizar um framework como o bootstrap e, principalmente, sem usar *float* e *clear* pra lá e pra cá.
+Concluindo, podemos ver que o Flexbox simplifica a tarefa de criar uma interface usando apenas CSS sem utilizar um framework como o bootstrap e, principalmente, sem a necessidade de usar *float* e *clear*.
 
 Mas pra que serve uma calculadora que não faz nada, né? No próximo post, vou mostrar como adicionar as funções de uma calculadora usando o framework Vue.js. Em um terceiro post, vou explicar como adicionar prefixos no CSS para navegadores mais antigos usando o [Autoprefixer](https://github.com/postcss/autoprefixer) com o Webpack como build tool.
