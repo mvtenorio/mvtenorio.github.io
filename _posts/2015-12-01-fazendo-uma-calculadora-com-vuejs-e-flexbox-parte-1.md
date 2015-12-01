@@ -127,7 +127,7 @@ Depois, vamos criar o arquivo CSS referenciado no *index.html* e aplicar um pouc
 }
 ```
 
-Após criar os dois arquivos, abra o arquivo *index.html* no seu navegador e veja o resultado. Você pode notar que o input *.expression* utrapassou os limites da div *.calculator* devido ao valor colocado na propriede *font-size*. Isso será corrigido automaticamente ao usar o flexbox.
+Após criar os dois arquivos, abra o arquivo *index.html* no seu navegador e veja o resultado. Você pode notar que o input *.expression* utrapassou os limites da div *.calculator* devido ao valor colocado na propriedade *font-size*. Isso será corrigido automaticamente ao usar o flexbox.
 
 Precisamos agora identificar qual elemento será o container principal. O elemento que envolve todos os outros é a div *.calculator*. Vamos então alterar sua propriedade *display*:
 
@@ -184,7 +184,7 @@ Em ambas as divs, os elementos se posicionaram em linha, como esperado. No caso 
 }
 ```
 
-Essa propriedade tem por padrão, o valor *nowrap* que impede a quebra de linha.
+Essa propriedade tem, por padrão, o valor *nowrap* que impede a quebra de linha.
 
 Na div *.right*, podemos alterar a direção para coluna, já que queremos apenas um item (ou seja, um botão) por linha.
 Também vamos colocar um tamanho fixo para essa div. Note que os botões se esticam de acordo com o tamanho da coluna.
