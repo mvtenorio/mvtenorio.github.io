@@ -40,7 +40,7 @@ Por exemplo, na estrutura seguinte:
 </style>
 ```
 
-Ao aplicarmos "`display: flex`" em `.container`, este se torna um container e os elementos input button e p se tornam itens, mas o input text não, pois não é filho imediato da div `.container`.
+Ao aplicarmos `display: flex` em `.container`, este se torna um container e os elementos input button e p se tornam itens, mas o input text não, pois não é filho imediato da div `.container`.
 
 Neste post, mencionarei apenas as características do flexbox relevantes ao que estamos fazendo. Você pode saber mais sobre Flexbox nesse [guia](https://css-tricks.com/snippets/css/a-guide-to-flexbox/) (inglês) e nessa [série de vídeos](http://flexbox.io/) (também em inglês) sobre o assunto.
 
