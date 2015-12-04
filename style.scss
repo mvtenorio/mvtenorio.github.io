@@ -271,6 +271,31 @@ nav {
   }
 }
 
+.post-list {
+
+  p {
+    color: #C2C2C2;
+  }
+
+  ul {
+    list-style-type: none;
+    font-size: 25px;
+    padding-left: 0;
+
+    li {
+      padding-bottom: 10px;
+
+      a {
+        color: #5F5C52;
+
+        &:hover, &:active {
+          color: $blue;
+        }
+      }
+    }
+  }
+}
+
 .wrapper-footer {
   margin-top: 50px;
   border-top: 1px solid #ddd;

@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Sobre
-permalink: /about/
+permalink: /sobre/
 ---
 
 Olá, meu nome é Marcus, tenho 23 anos e sou Desenvolvedor Web.
