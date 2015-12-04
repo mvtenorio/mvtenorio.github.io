@@ -248,6 +248,6 @@ O resultado final deve ser esse:
 
 ![Calculadora final]({{ site.baseurl }}/images/001/calculadora-final.png "Calculadora final")
 
-Concluindo, podemos ver que o Flexbox simplifica a tarefa de criar uma interface usando apenas CSS sem utilizar um framework como o bootstrap e, principalmente, sem a necessidade de usar `float` e `clear`.
+Concluindo, podemos ver que o Flexbox simplifica a tarefa de criar uma interface usando apenas CSS sem a necessidade de usar propriedades como float e clear, e sem recorrer a frameworks de front-end como o Bootstrap.
 
-Mas pra que serve uma calculadora que não faz nada, né? No próximo post, vou mostrar como adicionar as funções de uma calculadora usando o framework Vue.js. Em um terceiro post, vou explicar como adicionar prefixos no CSS para navegadores mais antigos usando o [Autoprefixer](https://github.com/postcss/autoprefixer) com o Webpack como build tool.
+Mas pra que serve uma calculadora que não faz nada, né? No segundo post desta série, vou mostrar como implementar as funções de uma calculadora usando o framework Vue.js. Em um terceiro post, vou explicar como adicionar prefixos no CSS para navegadores mais antigos usando o [Autoprefixer](https://github.com/postcss/autoprefixer) com o Webpack como build tool.
