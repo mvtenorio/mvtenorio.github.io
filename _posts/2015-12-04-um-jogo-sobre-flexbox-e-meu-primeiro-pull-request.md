@@ -4,7 +4,7 @@ title:  "Um jogo sobre Flexbox e meu primeiro pull request"
 date:   2015-12-04
 ---
 
-Flexbox Froggy é um jogo feito pelo [@thomashpark](https://twitter.com/thomashpark) para te ajudar a entender alguns conceitos sobre flexbox. Achei a ideia muito bacana e, como o código do jogo estava no GitHub, resolvi contribuir e traduzir para o português. Você pode acessar a versão traduzida [aqui](http://flexboxfroggy.com/lang/pt-br/).
+Flexbox Froggy é um jogo feito pelo [@thomashpark](https://twitter.com/thomashpark) para te ajudar a entender alguns conceitos sobre flexbox. Achei a ideia muito bacana e, como o código do jogo estava no GitHub, resolvi contribuir e traduzir para o português. Você pode acessar a versão traduzida [aqui](http://flexboxfroggy.com/#pt-br).
 
 Apesar de usar o Git no trabalho e em casa há algum tempo, eu ainda não tinha contribuido para nenhum projeto Open Source, então achei que essa era uma boa oportunidade. O processo todo é bem simples, caso você já tenha familiaridade com o Git. Vou descrever aqui como fazê-lo no GitHub, mas as etapas não são muito diferentes em outras plataformas, como o Bitbucket.
 
